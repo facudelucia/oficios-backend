@@ -17,7 +17,7 @@ app.use(require('./routes/index'));
 
 
 
-mongoose.connect(process.env.urlDB,  { 
+mongoose.connect(process.env.DB_CNN,  { 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useCreateIndex: true,
