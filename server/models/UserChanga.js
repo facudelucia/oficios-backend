@@ -26,7 +26,8 @@ let userChangaSchema = new Schema({
         required: [true, "El numero de telefono es necesario"]
     },
     zona: {
-        type: String
+        type: String,
+        required: [true, "La zona es es necesaria"]
     },
 });
 
