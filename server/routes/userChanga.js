@@ -42,7 +42,22 @@ app.post('/userchanga', function(req, res) {
 
 
 });
-
+app.get('/userchanga/:id', (req, res) => {
+    let id = req.params.id;
+    UserChanga.findOne({_id:id})
+        .exec((err, user) => {
+            if (err) {
+                return res.status(400).json({
+                    ok: false,
+                    err
+                });
+            }
+            res.json({
+                ok: true,
+                user
+            })
+        })
+})
 app.put('/userchanga/:id', [verificaToken], function(req, res) {
 
     let id = req.params.id;
